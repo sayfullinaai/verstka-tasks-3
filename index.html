@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+<link rel="stylesheet" href="index.css">
     <head>
         <meta charset="utf-8">
         <title>Лет ми спик фром май харт</title>
@@ -7,12 +8,431 @@
     </head>
     <body>
         <!-- Поле для фильтрации по городу -->
+         <input
+             id="cityDeparture"
+             type="text"
+             placeholder="Город отправления"
+             value=""
+             onkeyup="this.setAttribute('value', this.value)">
         <input
+            id="cityArrival"
             type="text"
-            placeholder="Город отправления"
+            placeholder="Город назначения"
             value=""
             onkeyup="this.setAttribute('value', this.value)">
-
-        <!-- Здесь применять вашу самую сильную магию -->
+        <form name="choiceTerminal" action="" method="get">
+            <p>Выберите терминал:</p>
+            <input id="terminalA" type="radio" name="choiceTerminal" value="A">A
+            <input id="terminalB" type="radio" name="choiceTerminal" value="A">B
+            <input id="terminalC" type="radio" name="choiceTerminal" value="A">C
+            <input id="terminalD" type="radio" name="choiceTerminal" value="A">D
+            <input id="terminalAll" type="radio" name="choiceTerminal" value="All">Все терминалы
+        </form>
+        <table class="tableOfDeparture">
+            <thead>
+                <tr>
+                    <th>Тип рейса</th>
+                    <th>Номер рейса</th>
+                    <th>Авиакомпания</th>
+                    <th>Логотип авиакомпании</th>
+                    <th>Тип воздушного судна</th>
+                    <th>Город назначения</th>
+                    <th>Аэропорт назначения</th>
+                    <th>Плановое время вылета/прилёта</th>
+                    <th>Номер терминала</th>
+                    <th>Статус рейса</th>
+                </tr>
+                </thead>
+                    <tbody>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival="Москва">
+                        <td>Отправление</td>
+                        <td>ОП 169</td>
+                        <td>S7 Airlines</td>
+                        <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                        <td>АН-74</td>
+                        <td>Москва</td>
+                        <td>Домодедово</td>
+                        <td>16:30&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Отменен</td>
+                    </tr>
+                    <tr dataTerminal ="B" dataCityDeparture="Екатеринбург" dataCityArrival = "Владивосток">
+                        <td>Отправление</td>
+                        <td>ВС 209</td>
+                        <td>S7 Airlines</td>
+                        <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                        <td>АН-26</td>
+                        <td>Владивосток</td>
+                        <td>Международный аэропорт Владивсток</td>
+                        <td>14:00&nbsp;20.10</td>
+                        <td>B</td>
+                        <td>Вылетел</td>
+                    </tr>
+                    <tr dataTerminal ="C" dataCityDeparture="Екатеринбург" dataCityArrival = "Самара">
+                        <td>Отправление</td>
+                        <td>ПК 102</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>АН-26</td>
+                        <td>Самара</td>
+                        <td>Международный аэропорт Самары</td>
+                        <td>15:30&nbsp;20.10</td>
+                        <td>C</td>
+                        <td>Задерживается</td>
+                    </tr>
+                    <tr dataTerminal ="C" dataCityDeparture="Екатеринбург" dataCityArrival = "Казань">
+                        <td>Отправление</td>
+                        <td>КМ 156</td>
+                        <td>Уральсике авиалинии</td>
+                        <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                        <td>АН-26</td>
+                        <td>Казань</td>
+                        <td>Международный аэропорт Казань</td>
+                        <td>13:10&nbsp;20.10</td>
+                        <td>C</td>
+                        <td>Вылетел</td>
+                    </tr>
+                    <tr dataTerminal ="C" dataCityDeparture="Екатеринбург" dataCityArrival = "Тюмень">
+                        <td>Отправление</td>
+                        <td>ПК 102</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>АН-26</td>
+                        <td>Тюмень</td>
+                        <td>Международный аропорт Тюмени</td>
+                        <td>15:30&nbsp;20.10</td>
+                        <td>C</td>
+                        <td>Задерживается</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Лондон">
+                        <td>Отправление</td>
+                        <td>АВ 215</td>
+                        <td>Уральсике авиалинии</td>
+                        <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                        <td>Saab 340</td>
+                        <td>Лондон</td>
+                        <td>Лондон-сити</td>
+                        <td>14:10&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Вылетел</td>
+                    </tr>
+                    <tr dataTerminal ="B" dataCityDeparture="Екатеринбург" dataCityArrival = "Нижний Новгород">
+                        <td>Отправление</td>
+                        <td>ПН 845</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>Saab 34</td>
+                        <td>Нижний Новгород</td>
+                        <td>Международный аропорт Нижний Новгорода</td>
+                        <td>13:10&nbsp;20.10</td>
+                        <td>B</td>
+                        <td>Посадка</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Якутск">
+                        <td>Отправление</td>
+                        <td>ПН 849</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>Saab 34</td>
+                        <td>Якутск</td>
+                        <td>Международный аропорт Якутска</td>
+                        <td>13:20&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Посадка</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Москва">
+                        <td>Отправление</td>
+                        <td>ОП 569</td>
+                        <td>S7 Airlines</td>
+                        <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                        <td>АН-74</td>
+                        <td>Москва</td>
+                        <td>Шереметьево</td>
+                        <td>14:30&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Вылетел</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Санкт-Петербург">
+                        <td>Отправление</td>
+                        <td>ОП 169</td>
+                        <td>S7 Airlines</td>
+                        <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                        <td>АН-74</td>
+                        <td>Санкт-Петербург</td>
+                        <td>Международный аропорт Санкт-Петербурга</td>
+                        <td>16:30&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Отменен</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Мурманск">
+                        <td>Отправление</td>
+                        <td>АВ 645</td>
+                        <td>Уральсике авиалинии</td>
+                        <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                        <td>АН-74</td>
+                        <td>Мурманск</td>
+                        <td>Мурманск</td>
+                        <td>15:10&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Посадка</td>
+                    </tr>
+                    <tr dataTerminal ="D" dataCityDeparture="Екатеринбург" dataCityArrival = "Уфа">
+                        <td>Отправление</td>
+                        <td>АС 548</td>
+                        <td>Уральсике авиалинии</td>
+                        <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                        <td>АН-74</td>
+                        <td>Уфа</td>
+                        <td>Международный аропорт Уфы</td>
+                        <td>13:10&nbsp;20.10</td>
+                        <td>D</td>
+                        <td>Посадка</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Новосибирск">
+                        <td>Отправление</td>
+                        <td>СА 451</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>Saab 34</td>
+                        <td>Новосибирск</td>
+                        <td>Международный аропорт Новосибирска</td>
+                        <td>13:00&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Вылетел</td>
+                    </tr>
+                    <tr dataTerminal ="D" dataCityDeparture="Екатеринбург" dataCityArrival = "Саратов">
+                        <td>Отправление</td>
+                        <td>СА 451</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>Saab 34</td>
+                        <td>Саратов</td>
+                        <td>Международный аропорт Саратова</td>
+                        <td>15:00&nbsp;20.10</td>
+                        <td>D</td>
+                        <td>Вылетел</td>
+                    </tr>
+                    <tr dataTerminal ="A" dataCityDeparture="Екатеринбург" dataCityArrival = "Омск">
+                        <td>Отправление</td>
+                        <td>СА 451</td>
+                        <td>Трансаэро</td>
+                        <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                        <td>Saab 34</td>
+                        <td>Омск</td>
+                        <td>Международный аропорт Омска</td>
+                        <td>13:00&nbsp;20.10</td>
+                        <td>A</td>
+                        <td>Вылетел</td>
+                    </tr>
+                </tbody>
+        </table>
+        <table class="tableOfLight">
+            <thead>
+            <tr>
+                <th>Тип рейса</th>
+                <th>Номер рейса</th>
+                <th>Авиакомпания</th>
+                <th>Логотип авиакомпании</th>
+                <th>Тип воздушного судна</th>
+                <th>Город назначения</th>
+                <th>Город отправления</th>
+                <th>Плановое время вылета/прилёта</th>
+                <th>Номер терминала</th>
+                <th>Статус рейса</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dataTerminal ="A" dataCityDeparture="Москва" dataCityArrival = "Владивосток">
+                <td>Прибытие</td>
+                <td>ОП 169</td>
+                <td>S7 Airlines</td>
+                <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                <td>АН-74</td>
+                <td>Москва</td>
+                <td>Владивосток</td>
+                <td>16:30&nbsp;20.10</td>
+                <td>A</td>
+                <td>Отменен</td>
+            </tr>
+            <tr dataTerminal ="B" dataCityDeparture="Владивосток" dataCityArrival = "Сочи">
+                <td>Отправление</td>
+                <td>ВС 209</td>
+                <td>S7 Airlines</td>
+                <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                <td>АН-26</td>
+                <td>Владивосток</td>
+                <td>Сочи</td>
+                <td>14:00&nbsp;20.10</td>
+                <td>B</td>
+                <td>Вылетел</td>
+            </tr>
+            <tr dataTerminal ="C" dataCityDeparture="Самара" dataCityArrival = "Астрахань">
+                <td>Прибытие</td>
+                <td>ПК 102</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>АН-26</td>
+                <td>Самара</td>
+                <td>Астрахань</td>
+                <td>15:30&nbsp;20.10</td>
+                <td>C</td>
+                <td>Задерживается</td>
+            </tr>
+            <tr dataTerminal ="C" dataCityDeparture="Казань" dataCityArrival = "Томск">
+                <td>Прибытие</td>
+                <td>КМ 156</td>
+                <td>Уральсике авиалинии</td>
+                <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                <td>АН-26</td>
+                <td>Казань</td>
+                <td>Томск</td>
+                <td>13:10&nbsp;20.10</td>
+                <td>C</td>
+                <td>Вылетел</td>
+            </tr>
+            <tr dataTerminal ="C" dataCityDeparture="Тюмень" dataCityArrival = "Норильск">
+                <td>Отправление</td>
+                <td>ПК 102</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>АН-26</td>
+                <td>Тюмень</td>
+                <td>Норильск</td>
+                <td>15:30&nbsp;20.10</td>
+                <td>C</td>
+                <td>Задерживается</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Волгоград" dataCityArrival = "Оренбург">
+                <td>Прибытие</td>
+                <td>АВ 215</td>
+                <td>Уральсике авиалинии</td>
+                <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                <td>Saab 340</td>
+                <td>Волгоград</td>
+                <td>Оренбург</td>
+                <td>14:10&nbsp;20.10</td>
+                <td>A</td>
+                <td>Вылетел</td>
+            </tr>
+            <tr dataTerminal ="B" dataCityDeparture="Ниний Новгород" dataCityArrival = "Челябинск">
+                <td>Отправление</td>
+                <td>ПН 845</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>Saab 34</td>
+                <td>Нижний Новгород</td>
+                <td>Челябинс</td>
+                <td>13:10&nbsp;20.10</td>
+                <td>B</td>
+                <td>Посадка</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Якутск" dataCityArrival  = "Махачкала">
+                <td>Прибытие</td>
+                <td>ПН 849</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>Saab 34</td>
+                <td>Якутск</td>
+                <td>Махачкала</td>
+                <td>13:20&nbsp;20.10</td>
+                <td>A</td>
+                <td>Посадка</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Москва" dataCityArrival = "Уфа">
+                <td>Прибытие</td>
+                <td>ОП 569</td>
+                <td>S7 Airlines</td>
+                <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                <td>АН-74</td>
+                <td>Москва</td>
+                <td>Уфа</td>
+                <td>14:30&nbsp;20.10</td>
+                <td>A</td>
+                <td>Вылетел</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Санкт-Петербург" dataCityArrival = "Челябинск">
+                <td>Отправление</td>
+                <td>ОП 169</td>
+                <td>S7 Airlines</td>
+                <td><img src="http://pattayatrip.ru/sites/default/files/styles/logo_air_50/public/pictures/logo_saitov/s7_logo.jpg?itok=YJc52B2K"></td>
+                <td>АН-74</td>
+                <td>Санкт-Петербург</td>
+                <td>Челябинск</td>
+                <td>16:30&nbsp;20.10</td>
+                <td>A</td>
+                <td>Отменен</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Мурманск" dataCityArrival = "Астана">
+                <td>Прибытие</td>
+                <td>АВ 645</td>
+                <td>Уральсике авиалинии</td>
+                <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                <td>АН-74</td>
+                <td>Мурманск</td>
+                <td>Астана</td>
+                <td>15:10&nbsp;20.10</td>
+                <td>A</td>
+                <td>Посадка</td>
+            </tr>
+            <tr dataTerminal ="D" dataCityDeparture="Уфа" dataCityArrival = "Санкт-Петербург">
+                <td>Отправление</td>
+                <td>АС 548</td>
+                <td>Уральсике авиалинии</td>
+                <td><img src="http://avia-mir.ru/pics/logos_avia/logo_FV.png"></td>
+                <td>АН-74</td>
+                <td>Уфа</td>
+                <td>Санкт-Петербург</td>
+                <td>13:10&nbsp;20.10</td>
+                <td>D</td>
+                <td>Посадка</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Новосибирск" dataCityArrival = "Казань">
+                <td>Отправление</td>
+                <td>СА 451</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>Saab 34</td>
+                <td>Новосибирск</td>
+                <td>Казань</td>
+                <td>13:00&nbsp;20.10</td>
+                <td>A</td>
+                <td>Вылетел</td>
+            </tr>
+            <tr dataTerminal ="D" dataCityDeparture="Саратов" dataCityArrival = "Сочи">
+                <td>Прибытие</td>
+                <td>СА 451</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>Saab 34</td>
+                <td>Саратов</td>
+                <td>Сочи</td>
+                <td>15:00&nbsp;20.10</td>
+                <td>D</td>
+                <td>Вылетел</td>
+            </tr>
+            <tr dataTerminal ="A" dataCityDeparture="Омск" dataCityArrival = "Владивосток">
+                <td>Прибытие</td>
+                <td>СА 451</td>
+                <td>Трансаэро</td>
+                <td><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2Dx6mWnk8vbiskRnDUJtW5lmWaOM07q0AlgnjnNt4xMQVWOai"></td>
+                <td>Saab 34</td>
+                <td>Омск</td>
+                <td>Владивосток</td>
+                <td>13:00&nbsp;20.10</td>
+                <td>A</td>
+                <td>Вылетел</td>
+            </tr>
+            </tbody>
+        </table>
+        <form>
+            <fieldset>
+                <p>Отправить данные о рейсе на телефон</p>
+                <label for="email">Email</label>
+                <input id="email" type="email"required placeholder="Email"><br>
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" required placeholder="Phone" pattern="[0-9]{11}"><br>
+                <button type="submit" formmethod="GET">Отправить</button>
+            </fieldset>
+        </form>
     </body>
 </html>
